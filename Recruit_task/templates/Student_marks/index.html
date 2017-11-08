@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Marks</title>
+</head>
+<body>
+   {% for section in all_sections %}
+      <b> {{section}} </b><br>
+
+      {% for student in section.student_set.all %}
+         {{student.student_name}}---{{student.student_score}}<br>
+      {% endfor %}
+
+   {% endfor %}
+
+   <a href="{% url 'Student_marks:extra_view' %}">Extra</a>
+</body>
+</html>
